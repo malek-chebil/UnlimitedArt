@@ -1,0 +1,38 @@
+I need to run:
+npm add @babel/runtime
+
+ServerRoutes/admin.js
+L2:
+"../Data-Base/Admin/admin" not "../Data-Base/Admin/Aadmin"
+
+Avoid using dash on title:
+FREELANCER-SIGNUP
+
+Correct the title for /ClientSignup
+
+You could use images for pages more related to subject
+of the page (Login/Signup for FreeLancer/Client pages)
+
+NavBar
+Custom font for your website name 
+custom style for active linkh
+Why home login as 
+button to open side bar should be smaller and in the some ligne as website title
+and appear in smaller screen
+Home Page
+Custom font for text in landing page add text-shadow
+to make it more clear
+Learn more button use font-weight bold with icon
+
+
+It will be better to have directories one for routes and one for layouts
+
+FreeLancerSignup Page:
+image disappear on small page
+password confirm password could be in the some lign in big screens
+First and last name should be in diffirant ligne in small screens
+
+Use format Document after finishing the file
+Why you are using Switch in many components
+
+You need to decide early if you will use Freelancer or artist
