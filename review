@@ -3,7 +3,7 @@ npm add @babel/runtime
 
 ServerRoutes/admin.js
 L2:
-"../Data-Base/Admin/admin" not "../Data-Base/Admin/Aadmin"
+"../Data-Base/Admin/admin" not "../Data-Base/Admin/Admin"
 
 Avoid using dash on title:
 FREELANCER-SIGNUP
@@ -15,8 +15,8 @@ of the page (Login/Signup for FreeLancer/Client pages)
 
 NavBar
 Custom font for your website name 
-custom style for active linkh
-Why home login as 
+custom style for active link
+Why home login as client links has different style
 button to open side bar should be smaller and in the some ligne as website title
 and appear in smaller screen
 Home Page
@@ -34,5 +34,7 @@ First and last name should be in diffirant ligne in small screens
 
 Use format Document after finishing the file
 Why you are using Switch in many components
+You call footer component about(h6 footer)
+don't use heading for style
 
 You need to decide early if you will use Freelancer or artist
