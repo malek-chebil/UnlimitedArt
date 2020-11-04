@@ -1,7 +1,6 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import { makeStyles, withStyles } from "@material-ui/core/styles";
-import { Button, Icon, Grid } from "@material-ui/core";
+import React, { useState } from "react";
+import { makeStyles, withStyles, useTheme } from "@material-ui/core/styles";
+import { Button, Icon, Grid, useMediaQuery } from "@material-ui/core";
 import { grey, blue } from "@material-ui/core/colors";
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -29,6 +28,40 @@ const useStyles = makeStyles((theme) => ({
       fontSize: "32px",
     },
   },
+  infos: {
+    "& section": {
+      padding: "20px",
+    },
+
+    "& .image": {
+      textAlign: "center",
+      padding: "40px",
+      "& img": {
+        borderRadius: "50%!important",
+        width: "100%",
+      },
+    },
+    "& .text": {
+      padding: "40px",
+      "& h2": {
+        whiteSpace: "nowrap",
+        fontFamily: "Catamaran",
+        fontSize: "56px",
+        fontWeight: "800!important",
+        color: "#666",
+        margin: "0",
+        [theme.breakpoints.down("sm")]: {
+          fontSize: "32px",
+        },
+      },
+      "& p": {
+        margin: "0",
+        fontFamily: '"Muli-Regular"',
+        color: "#666",
+        fontSize: "16px",
+      },
+    },
+  },
 }));
 
 const SeeMore = withStyles((theme) => ({
@@ -52,26 +85,82 @@ const SeeMore = withStyles((theme) => ({
   />
 ));
 export default function Home() {
+  const theme = useTheme();
+  const smUp = useMediaQuery(theme.breakpoints.up("sm"));
   const classes = useStyles();
+  const [infos, setInfos] = useState(() => [
+    {
+      img: { src: "img/03.jpg" },
+      text: {
+        title: "FreeLancers",
+        detail: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod
+    aliquid, mollitia odio veniam sit iste esse assumenda amet
+    aperiam exercitationem, ea animi blanditiis recusandae! Ratione
+    voluptatum molestiae adipisci, beatae obcaecati.`,
+      },
+    },
+    {
+      img: { src: "img/02.jpg" },
+      text: {
+        title: "Clients",
+        detail: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod
+    aliquid, mollitia odio veniam sit iste esse assumenda amet
+    aperiam exercitationem, ea animi blanditiis recusandae! Ratione
+    voluptatum molestiae adipisci, beatae obcaecati.`,
+      },
+    },
+    {
+      img: { src: "img/01.jpg" },
+      text: {
+        title: "Our Team",
+        detail: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod
+    aliquid, mollitia odio veniam sit iste esse assumenda amet
+    aperiam exercitationem, ea animi blanditiis recusandae! Ratione
+    voluptatum molestiae adipisci, beatae obcaecati.`,
+      },
+    },
+  ]);
   return (
-    <div className={classes.root}>
-      <Grid
-        style={{ height: "100%" }}
-        container
-        direction="column"
-        justify="center"
-        alignItems="center"
-      >
-        <Grid item>
-          <div className={classes.title}>
-            <div>unlimited art</div>
-            <div>First .. Platform</div>
-          </div>
+    <div>
+      <div className={classes.root}>
+        <Grid
+          style={{ height: "100%" }}
+          container
+          direction="column"
+          justify="center"
+          alignItems="center"
+        >
+          <Grid item>
+            <div className={classes.title}>
+              <div>unlimited art</div>
+              <div>First .. Platform</div>
+            </div>
+          </Grid>
+          <Grid item>
+            <SeeMore>Learn More</SeeMore>
+          </Grid>
         </Grid>
-        <Grid item>
-          <SeeMore>Learn More</SeeMore>
-        </Grid>
-      </Grid>
+      </div>
+      <div className={classes.infos}>
+        {infos.map((info, key) => (
+          <section key={key}>
+            <Grid
+              direction={key % 2 == 1 && smUp ? "row-reverse" : "row"}
+              container
+              spacing={3}
+              alignItems="center"
+            >
+              <Grid className="image" item xs={12} sm={6}>
+                <img src={info.img.src} alt="" />
+              </Grid>
+              <Grid className="text" item xs={12} sm={6}>
+                <h2>{info.text.title}</h2>
+                <p>{info.text.detail}</p>
+              </Grid>
+            </Grid>
+          </section>
+        ))}
+      </div>
     </div>
   );
 }
