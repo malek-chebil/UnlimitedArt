@@ -11,7 +11,7 @@ import { rootReducer } from "../../Redux/redux";
 // import Home from "./components/Home.jsx";
 // import Footer from "./components/Footer.jsx";
 import NavbarUA from "src/layouts/Navbar.jsx";
-import Home from "src/components/Home.jsx"
+import Home from "src/routers/Home.jsx"
 // import Signup from "./components/Signup.jsx";
 // import Login from "./components/Login.jsx";
 ///////////Routes///////////
@@ -43,6 +43,11 @@ class App extends React.Component {
     return (
       <div>
         <NavbarUA links={this.state.links} />
+        <Switch>
+            <Route path="/">
+              <Home />
+            </Route>
+          </Switch>
       </div>
     );
   }

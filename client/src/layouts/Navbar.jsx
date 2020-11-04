@@ -13,6 +13,7 @@ import Menu from "src/components/Menu.jsx";
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
+    maxHeight:"65px"
   },
   menuButton: {
     marginRight: theme.spacing(2),
