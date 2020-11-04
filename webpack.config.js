@@ -1,3 +1,4 @@
+const path = require('path');
 module.exports = {
     entry: __dirname + '/client/src/index.jsx',
     module: {
@@ -18,5 +19,11 @@ module.exports = {
       filename: 'bundle.js',
       path: __dirname + '/client/dist'
     },
+    resolve: {
+      alias: {
+        src: path.resolve(__dirname, 'client/src'),
+        dist: path.resolve(__dirname, 'client/dist')
+      }
+    }
     
   };

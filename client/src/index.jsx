@@ -10,7 +10,8 @@ import { rootReducer } from "../../Redux/redux";
 
 // import Home from "./components/Home.jsx";
 // import Footer from "./components/Footer.jsx";
-import NavbarUA from "./components/navbar.jsx";
+import NavbarUA from "src/layouts/Navbar.jsx";
+import Home from "src/components/Home.jsx"
 // import Signup from "./components/Signup.jsx";
 // import Login from "./components/Login.jsx";
 ///////////Routes///////////
