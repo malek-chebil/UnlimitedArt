@@ -56,7 +56,7 @@ const useStyles = makeStyles((theme) => ({
       },
       "& p": {
         margin: "0",
-        fontFamily: '"Muli-Regular"',
+        fontFamily: 'Muli-Regular',
         color: "#666",
         fontSize: "16px",
       },
